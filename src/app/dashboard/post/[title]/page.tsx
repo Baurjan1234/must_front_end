@@ -18,8 +18,7 @@ type Props = {
 export default function PostDetailsPage({ params }: Props) {
   const { title } = params;
 
-  // return <PostDetailsView title={title} />;
-  return <div>{title}</div>;
+  return <PostDetailsView title={title} />;
 }
 
 export async function generateStaticParams() {
