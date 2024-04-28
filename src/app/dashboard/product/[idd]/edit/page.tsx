@@ -10,14 +10,14 @@ export const metadata = {
 
 type Props = {
   params: {
-    id: string;
+    idd: string;
   };
 };
 
 export default function ProductEditPage({ params }: Props) {
-  const { id } = params;
+  const { idd } = params;
 
-  return <ProductEditView id={id} />;
+  return <ProductEditView id={idd} />;
 }
 
 export async function generateStaticParams() {
