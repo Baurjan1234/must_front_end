@@ -108,7 +108,7 @@ function BookingItem({ item }: BookingItemProps) {
         }}
       >
         <Stack direction="row" alignItems="center" spacing={2}>
-          <Avatar alt={name} src={avatarUrl} />
+          <Avatar alt={name} src='https://images.pexels.com/photos/22710826/pexels-photo-22710826/free-photo-of-faith-hope-and-love-a-book-of-hope.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load' />
           <ListItemText
             primary={name}
             secondary={fDateTime(bookedAt)}
@@ -158,7 +158,7 @@ function BookingItem({ item }: BookingItemProps) {
       </Label>
 
       <Box sx={{ p: 1, position: 'relative' }}>
-        <Image alt={coverUrl} src={coverUrl} ratio="1/1" sx={{ borderRadius: 1.5 }} />
+        <Image alt={coverUrl} src='https://images.pexels.com/photos/22710826/pexels-photo-22710826/free-photo-of-faith-hope-and-love-a-book-of-hope.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load' ratio="1/1" sx={{ borderRadius: 1.5 }} />
       </Box>
     </Paper>
   );

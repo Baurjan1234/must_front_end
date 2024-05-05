@@ -20,8 +20,8 @@ export default function UserCardsView() {
   const settings = useSettingsContext();
 
   return (
-    <Container maxWidth={settings.themeStretch ? false : 'lg'}>
-      <CustomBreadcrumbs
+    <Container maxWidth={settings.themeStretch ? false : 'lg'} sx={{paddingTop: '40px' , paddingRight: '0' , paddingLeft: '0' ,width: '100%', margin: 0}}>
+      {/* <CustomBreadcrumbs
         heading="User Cards"
         links={[
           { name: 'Dashboard', href: paths.dashboard.root },
@@ -39,7 +39,7 @@ export default function UserCardsView() {
           </Button>
         }
         sx={{ mb: { xs: 3, md: 5 } }}
-      />
+      /> */}
 
       <UserCardList users={_userCards} />
     </Container>

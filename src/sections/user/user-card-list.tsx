@@ -4,6 +4,7 @@ import { IUserCard } from 'src/types/user';
 
 import UserCard from './user-card';
 
+
 // ----------------------------------------------------------------------
 
 type Props = {
@@ -18,8 +19,9 @@ export default function UserCardList({ users }: Props) {
       gridTemplateColumns={{
         xs: 'repeat(1, 1fr)',
         sm: 'repeat(2, 1fr)',
-        md: 'repeat(3, 1fr)',
+        md: 'repeat(3, 1fr)'
       }}
+      sx={{width: '1440px'}}
     >
       {users.map((user) => (
         <UserCard key={user.id} user={user} />

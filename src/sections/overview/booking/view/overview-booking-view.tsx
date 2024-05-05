@@ -1,8 +1,12 @@
 'use client';
 
+import { useEffect } from 'react';
+
+import { UserCardsView } from 'src/sections/user/view';
 import { useTheme } from '@mui/material/styles';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Unstable_Grid2';
+import Typography from '@mui/material/Typography';
 
 import { _bookings, _bookingNew, _bookingReview, _bookingsOverview } from 'src/_mock';
 import {
@@ -23,6 +27,9 @@ import BookingWidgetSummary from '../booking-widget-summary';
 import BookingCheckInWidgets from '../booking-check-in-widgets';
 import BookingCustomerReviews from '../booking-customer-reviews';
 
+
+
+
 // ----------------------------------------------------------------------
 
 const SPACING = 3;
@@ -32,31 +39,50 @@ export default function OverviewBookingView() {
 
   const settings = useSettingsContext();
 
+  const fetchData = async () => {
+    try {
+      const res = await fetch('http://192.168.1.78:3001/api/project');
+      const data = res.json();
+      console.log(data)
+    } catch( error ) {
+      console.log(error.message);
+    }
+  }
+
+  useEffect(()=> {
+    fetchData();
+  },[])
+  
+
   return (
     <Container maxWidth={settings.themeStretch ? false : 'xl'}>
+      <Typography variant="h1" sx={{marginBottom: '30px'}}>
+        Өдрийн мэнд, Жавхлан!
+      </Typography>
+
       <Grid container spacing={SPACING} disableEqualOverflow>
         <Grid xs={12} md={4}>
           <BookingWidgetSummary
-            title="Total Booking"
-            total={714000}
+            title="Нийт борлуулалт"
+            total={234600}
             icon={<BookingIllustration />}
           />
         </Grid>
 
         <Grid xs={12} md={4}>
-          <BookingWidgetSummary title="Sold" total={311000} icon={<CheckInIllustration />} />
+          <BookingWidgetSummary title="Зарагдсан" total={196300} icon={<CheckInIllustration />} />
         </Grid>
 
         <Grid xs={12} md={4}>
-          <BookingWidgetSummary title="Canceled" total={124000} icon={<CheckoutIllustration />} />
+          <BookingWidgetSummary title="Хүлээгдэж буй" total={38300} icon={<CheckoutIllustration />} />
         </Grid>
 
         <Grid container xs={12}>
           <Grid container xs={12} md={8}>
             <Grid xs={12} md={6}>
               <BookingTotalIncomes
-                title="Total Incomes"
-                total={18765}
+                title="Ханш"
+                total={72.21}
                 percent={2.6}
                 chart={{
                   series: [
@@ -180,6 +206,7 @@ export default function OverviewBookingView() {
           />
         </Grid>
       </Grid>
+      <UserCardsView />
     </Container>
   );
 }

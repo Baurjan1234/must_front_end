@@ -7,6 +7,9 @@ import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import ListItemText from '@mui/material/ListItemText';
 import { alpha, useTheme } from '@mui/material/styles';
+import { RouterLink } from 'src/routes/components';
+import { paths } from 'src/routes/paths';
+import Link from '@mui/material/Link';
 
 import { fShortenNumber } from 'src/utils/format-number';
 
@@ -59,22 +62,29 @@ export default function UserCard({ user }: Props) {
         />
 
         <Image
-          src={coverUrl}
+          src="https://images.pexels.com/photos/12954030/pexels-photo-12954030.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
           alt={coverUrl}
           ratio="16/9"
-          overlay={alpha(theme.palette.grey[900], 0.48)}
+          // overlay={alpha(theme.palette.grey[900], 0.48)}
         />
       </Box>
 
       <ListItemText
         sx={{ mt: 7, mb: 1 }}
-        primary={name}
-        secondary={role}
+        primary={
+          <Link component={RouterLink} href={paths.dashboard.tour.details('e99f09a7-dd88-49d5-b1c8-1daf80c2d7b2')} color="inherit">
+            {name}
+          </Link>}
+        secondary={
+          <Link component={RouterLink} href={paths.dashboard.tour.details('e99f09a7-dd88-49d5-b1c8-1daf80c2d7b2')} color="inherit">
+            {name}
+          </Link>
+        }
         primaryTypographyProps={{ typography: 'subtitle1' }}
         secondaryTypographyProps={{ component: 'span', mt: 0.5 }}
       />
 
-      <Stack direction="row" alignItems="center" justifyContent="center" sx={{ mb: 2.5 }}>
+      {/* <Stack direction="row" alignItems="center" justifyContent="center" sx={{ mb: 2.5 }}>
         {_socials.map((social) => (
           <IconButton
             key={social.name}
@@ -88,7 +98,7 @@ export default function UserCard({ user }: Props) {
             <Iconify icon={social.icon} />
           </IconButton>
         ))}
-      </Stack>
+      </Stack> */}
 
       <Divider sx={{ borderStyle: 'dashed' }} />
 

@@ -17,7 +17,7 @@ import { SettingsDrawer, SettingsProvider } from 'src/components/settings';
 
 import { CheckoutProvider } from 'src/sections/checkout/context';
 
-import { AuthProvider } from 'src/auth/context/jwt';
+// import { AuthProvider } from 'src/auth/context/jwt';
 // import { AuthProvider } from 'src/auth/context/auth0';
 // import { AuthProvider } from 'src/auth/context/amplify';
 // import { AuthProvider } from 'src/auth/context/firebase';
@@ -54,7 +54,7 @@ export default function RootLayout({ children }: Props) {
   return (
     <html lang="en" className={primaryFont.className}>
       <body>
-        <AuthProvider>
+        {/* <AuthProvider> */}
           <LocalizationProvider>
             <SettingsProvider
               defaultSettings={{
@@ -79,7 +79,7 @@ export default function RootLayout({ children }: Props) {
               </ThemeProvider>
             </SettingsProvider>
           </LocalizationProvider>
-        </AuthProvider>
+        {/* </AuthProvider> */}
       </body>
     </html>
   );

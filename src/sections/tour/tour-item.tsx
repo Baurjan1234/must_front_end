@@ -183,8 +183,14 @@ export default function TourItem({ tour, onView, onEdit, onDelete }: Props) {
         {renderTexts}
 
         {renderInfo}
+        {/* <Button
+        variant='contained'
+        sx={{marginLeft: '10px' , width: '400px'}}
+        >
+          Buy
+        </Button> */}
       </Card>
-
+      
       <CustomPopover
         open={popover.open}
         onClose={popover.onClose}

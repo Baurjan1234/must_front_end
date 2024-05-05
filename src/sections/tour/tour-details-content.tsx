@@ -74,7 +74,7 @@ export default function TourDetailsContent({ tour }: Props) {
         >
           <Image
             alt={slides[0].src}
-            src={slides[0].src}
+            src='https://images.pexels.com/photos/22705119/pexels-photo-22705119/free-photo-of-black-man-b-w-photo.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load'
             ratio="1/1"
             onClick={() => handleOpenLightbox(slides[0].src)}
             sx={{ borderRadius: 2, cursor: 'pointer' }}
@@ -93,7 +93,7 @@ export default function TourDetailsContent({ tour }: Props) {
             >
               <Image
                 alt={slide.src}
-                src={slide.src}
+                src='https://images.pexels.com/photos/22710826/pexels-photo-22710826/free-photo-of-faith-hope-and-love-a-book-of-hope.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load'
                 ratio="1/1"
                 onClick={() => handleOpenLightbox(slide.src)}
                 sx={{ borderRadius: 2, cursor: 'pointer' }}
